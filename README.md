@@ -22,3 +22,7 @@ For an extensive overview see the [Adafruit instructions](https://learn.adafruit
 1. Now you can program the device over the upload button
 1. Copy the configuration file "conf.txt" to the SD card
 1. SD card has to be formated with FAT32
+
+# Troubleshooting
+
+On fist compilation there can be an error from SD library. Just compile the project again and it should disappear.
