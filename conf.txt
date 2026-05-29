@@ -1,0 +1,22 @@
+# logger id
+id = 2
+# reward in milliseconds
+reward = 100
+# reward the animal again after this pause, if it still there
+pause = 1000
+# max number of rewards on a visit
+max_rewards = 5
+# running mode: 0 - rfid logger, 1 - reward on rfid and light barrier, 2 - reward on light barrier
+run_as = 2
+# wait for next rfid or light barrier event
+max_pause = 5000
+# night start, hour - UTC
+night_start_hr = 18
+# night start, minute
+night_start_mm = 0
+# night end, hour - UTC
+night_end_hr = 7
+# night start, minute
+night_end_mm = 55
+# min battery level
+min_bat_lvl = 0
