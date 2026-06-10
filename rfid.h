@@ -15,6 +15,7 @@ struct Rfid {
 class RfidReader {
 public:
   void Start();
+  void StartForce();
   void Stop();
 
   /**

@@ -8,6 +8,12 @@ void RfidReader::Start() {
   }
 }
 
+void RfidReader::StartForce() {
+  digitalWrite(RFID_EN, HIGH);
+  Serial1.begin(19200, SERIAL_8E1);
+  running = true;
+}
+
 void RfidReader::Stop() {
   if(running){
     digitalWrite(RFID_EN, LOW);

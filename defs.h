@@ -30,10 +30,10 @@
 #define RTC_IRQ_PIN 5      // pin to receive time interrupts from RTC
 
 #define REWARD_OUT 6       // reward output pin, e.g. valve or pump
-#define POKE_IN    9       // poke input pin, light barrier
+#define POKE_IN    11      // poke input pin, light barrier
 
 #define LED_BLUE 17
 #define LED_GREEN 18
 #define LED_RED 12
 
-#define BATTERY_STATE A5 // analog input for the battery state
+#define BATTERY_STATE A7 // analog input for the battery state

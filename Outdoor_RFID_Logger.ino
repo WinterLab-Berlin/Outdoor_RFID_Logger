@@ -207,15 +207,23 @@ void setup() {
   //config.night_end_hr = 10;
   //config.night_end_mm = 15;
 
-  int batLvl = analogRead(BATTERY_STATE);
+  float batLvl = analogRead(BATTERY_STATE);
+  batLvl *= 2;    // we divided by 2, so multiply back
+  batLvl *= 3.3;  // Multiply by 3.3V, our reference voltage
+  batLvl /= 1024; // convert to voltage
+  float minBatLvl = config.min_bat_lvl / 100.0f;
   //while (true) {
   //  Serial.print("bat: ");
-  //  Serial.print(config.min_bat_lvl);
+  //  Serial.print(minBatLvl);
   //  Serial.print(" : ");
-  //  Serial.println(batLvl);
+  //  Serial.print(batLvl);
+  //  if (batLvl < minBatLvl)
+  //    Serial.println(" : to low");
+  //  else
+  //   Serial.println(" : norm");
   //  delay(1000);
   //}
-  if (batLvl < config.min_bat_lvl)
+  if (batLvl < minBatLvl)
     battery_error_state();
 
   // start RTC
@@ -428,7 +436,7 @@ void loop() {
           }
 
           LowPower.deepSleep();
-          rfid_reader.Start();
+          rfid_reader.StartForce();
           Serial.begin(19200);
 
           //digitalWrite(LED_BUILTIN, HIGH);
